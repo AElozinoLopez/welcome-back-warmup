@@ -1,3 +1,4 @@
+// Example using stdin and stdout
 console.log('Please enter a number');
 process.stdin.on('data', (data) => {
     const num = parseInt(data.toString())
@@ -8,3 +9,4 @@ process.stdin.on('data', (data) => {
         process.stdout.write  (num.toString() + "is odd")
     }
 })
+
