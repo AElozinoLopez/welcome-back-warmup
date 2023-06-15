@@ -13,3 +13,7 @@ process.stdin.on('data', (data) => {
 process.on('beforeExit', () => {
     console.log('I am here before exit');
 })
+
+process.on('exit', () => {
+    console.log('I am here on exit');
+})
