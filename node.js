@@ -10,3 +10,6 @@ process.stdin.on('data', (data) => {
     }
 })
 
+process.on('beforeExit', () => {
+    console.log('I am here before exit');
+})
