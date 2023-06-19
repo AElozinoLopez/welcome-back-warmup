@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Elozino-Lopez/welcome-back-warmup/issues"
   },
-  "homepage": "https://github.com/Elozino-Lopez/welcome-back-warmup#readme"
+  "homepage": "https://github.com/Elozino-Lopez/welcome-back-warmup#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
