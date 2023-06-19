@@ -5,7 +5,7 @@ const router = express.Router();
 
 // CRUD
 // GET
- router.get ('/', (req, res) => {
+ router.get ('/router', (req, res) => {
     res.status(200).send('Hello OSCArians!');
  })
 
