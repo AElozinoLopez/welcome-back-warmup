@@ -24,7 +24,7 @@ app.get ('/', (req, res) => {
 
 // Route for all the courses
 app.get ('/api/courses', (req, res) => {
-    res.send([1, 2, 3, 4]);
+    res.send(courses);
 })
 
 // Route to get one course
