@@ -15,6 +15,10 @@ app.get ('/', (req, res) => {
 })
 
 
+app.get ('./api/courses', (req, res) => {
+    res.send([1, 2, 3, 4]);
+})
+
 app.get("/secret", (req, res) => {
     res.status(401).json({message: "unauthorised"})
 });
