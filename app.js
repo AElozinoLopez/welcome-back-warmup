@@ -11,9 +11,9 @@ app.use(express.urlencoded({extended: true}));
 
 const courses = [
     {id: 1, name: 'JavaScript'},
-    {id: 1, name: 'MongoDB'},
-    {id: 1, name: 'MySQL'},
-    {id: 1, name: 'Node'}
+    {id: 2, name: 'MongoDB'},
+    {id: 3, name: 'MySQL'},
+    {id: 4, name: 'Node'}
 
 ]
 
