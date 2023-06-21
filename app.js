@@ -92,6 +92,14 @@ app.put('/api/courses/:id', (req, res) => {
 
 })
 
+// Creating the validation logic in a separate file
+function validateCourse(course) {
+    const schema = {
+        name: Joi.string().min(4).required()
+    };
+    return Joi.validate(course, schema);
+}
+
 app.listen (port, () => {
     console.log(`Welcome back app is listening on port ${port}`)
 })
