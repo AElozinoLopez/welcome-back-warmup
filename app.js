@@ -48,12 +48,17 @@ app.post('/api/courses', (req, res) => {
 const schema = {
     name: Joi.string().min(4).required()
 }
+const result = Joi.validate(req.body, schema);
+if (result.error) {
+    res.status(400).send(result.error);
+    return;
+}
 
 // Hard coding the validation logic
-    if (!req.body.name || req.body.num < 4) {
-        res.status(400).send('Name is required');
-        return;
-    }
+    // if (!req.body.name || req.body.num < 4) {
+    //     res.status(400).send('Name is required');
+    //     return;
+    // }
 
     const course = {
         id: courses.length + 1,
