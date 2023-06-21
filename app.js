@@ -32,7 +32,7 @@ app.get ('/api/courses', (req, res) => {
 // Route to get one course
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('The course with then given id was not found');
+    if (!course) return res.status(404).send('The course with the given ID was not found');
     res.send(course);
 })
 
@@ -57,13 +57,8 @@ app.post('/api/courses', (req, res) => {
 // A simpler smarter way to validate
 const {error} = validateCourse(req.body)
 
-    if(error) {
-        res.status(400).send(error.details[0].message);
-        return;
-    }
-
-
-    
+    if(error) return res.status(400).send(error.details[0].message);
+           
 // Hard coding the validation logic
     // if (!req.body.name || req.body.num < 4) {
     //     res.status(400).send('Name is required');
@@ -84,7 +79,7 @@ const {error} = validateCourse(req.body)
 app.put('/api/courses/:id', (req, res) => {
     // Checking for course availability
     const course = courses.find (c => c.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('The course with the given ID was not found');
+    if (!course) return res.status(404).send('The course with the given ID was not found');
 
     // Validating the course
     // const result = validateCourse(req.body)
@@ -97,10 +92,8 @@ app.put('/api/courses/:id', (req, res) => {
     // Using object destructuring
     const {error} = validateCourse(req.body)
 
-    if(error) {
-        res.status(400).send(error.details[0].message);
-        return;
-    }
+    if(error) return res.status(400).send(error.details[0].message);
+     
 
 
     course.name = req.body.name;
@@ -121,7 +114,7 @@ function validateCourse(course) {
 app.delete('/api/courses/:id', (req, res) => {
     // Find the course
     const course = courses.find(c => c.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('The course with the given ID does not exist');
+    if (!course) return res.status(404).send('The course with the given ID does not exist');
     
     const index = courses.indexOf(course);
     courses.splice(index, 1);
