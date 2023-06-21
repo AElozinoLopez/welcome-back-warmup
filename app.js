@@ -122,6 +122,12 @@ app.delete('/api/courses/:id', (req, res) => {
     // Find the course
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if (!course) res.status(404).send('The course with the given ID does not exist');
+    res.send(course);
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+    
+
 })
 
 app.listen (port, () => {
