@@ -44,6 +44,12 @@ app.get('/api/courses/:id', (req, res) => {
 // Updating the courses using post
 app.post('/api/courses', (req, res) => {
 // Validating the user input
+// Using Joi
+const schema = {
+    name: Joi.string().min(4).required()
+}
+
+// Hard coding the validation logic
     if (!req.body.name || req.body.num < 4) {
         res.status(400).send('Name is required');
         return;
