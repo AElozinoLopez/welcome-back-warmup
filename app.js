@@ -87,6 +87,9 @@ app.put('/api/courses/:id', (req, res) => {
         return;
     }
 
+    course.name = req.body.name;
+    res.send(course);
+
 })
 
 app.listen (port, () => {
