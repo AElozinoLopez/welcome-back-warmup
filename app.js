@@ -41,6 +41,12 @@ app.get('/api/courses/:id', (req, res) => {
 
 // Updating the courses using post
 app.post('/api/courses', (req, res) => {
+// Validating the user input
+    if (!req.body.name || req.body.num < 4) {
+        res.status(400).send('Name is required');
+        return;
+    }
+
     const course = {
         id: courses.length + 1,
         name: req.body.name
