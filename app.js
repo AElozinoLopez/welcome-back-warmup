@@ -77,15 +77,21 @@ app.put('/api/courses/:id', (req, res) => {
     if (!course) res.status(404).send('The course with the given ID was not found');
 
     // Validating the course
-    const schema = {
-        name: Joi.string().min(4).required()
-    };
-    const result = Joi.validate(req.body, schema);
+    // const result = validateCourse(req.body)
 
-    if(result.error) {
-        res.status(400).send(result.error.details[0].message);
+    // if(result.error) {
+    //     res.status(400).send(result.error.details[0].message);
+    //     return;
+    // }
+
+    // Using object destructuring
+    const {error} = validateCourse(req.body)
+
+    if(error) {
+        res.status(400).send(error.details[0].message);
         return;
     }
+
 
     course.name = req.body.name;
     res.send(course);
