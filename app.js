@@ -69,6 +69,13 @@ if (result.error) {
     res.send(course);
 })
 
+
+// Updating a course
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find (c => c.id === parseInt(req.params.id));
+
+})
+
 app.listen (port, () => {
     console.log(`Welcome back app is listening on port ${port}`)
 })
