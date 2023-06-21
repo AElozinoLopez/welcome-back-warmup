@@ -35,10 +35,20 @@ app.get('/api/courses/:id', (req, res) => {
 })
 
 
-app.get("/secret", (req, res) => {
-    res.status(401).json({message: "unauthorised"})
-});
+// app.get("/secret", (req, res) => {
+//     res.status(401).json({message: "unauthorised"})
+// });
 
+// Updating the courses using post
+app.post('/api/courses', (req, res) => {
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+
+    courses.push(course);
+    res.send(course);
+})
 
 app.listen (port, () => {
     console.log(`Welcome back app is listening on port ${port}`)
