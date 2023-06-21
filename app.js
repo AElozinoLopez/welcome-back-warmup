@@ -45,15 +45,25 @@ app.get('/api/courses/:id', (req, res) => {
 app.post('/api/courses', (req, res) => {
 // Validating the user input
 // Using Joi
-const schema = {
-    name: Joi.string().min(4).required()
-}
-const result = Joi.validate(req.body, schema);
-if (result.error) {
-    res.status(400).send(result.error.details[0].message);
-    return;
-}
+// const schema = {
+//     name: Joi.string().min(4).required()
+// }
+// const result = Joi.validate(req.body, schema);
+// if (result.error) {
+//     res.status(400).send(result.error.details[0].message);
+//     return;
+// }
 
+// A simpler smarter way to validate
+const {error} = validateCourse(req.body)
+
+    if(error) {
+        res.status(400).send(error.details[0].message);
+        return;
+    }
+
+
+    
 // Hard coding the validation logic
     // if (!req.body.name || req.body.num < 4) {
     //     res.status(400).send('Name is required');
@@ -105,6 +115,13 @@ function validateCourse(course) {
     };
     return Joi.validate(course, schema);
 }
+
+
+// Deleting a course
+app.delete('/api/courses/:id', (req, res) => {
+    // Find the course
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+})
 
 app.listen (port, () => {
     console.log(`Welcome back app is listening on port ${port}`)
