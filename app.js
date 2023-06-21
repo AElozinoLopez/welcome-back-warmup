@@ -72,7 +72,20 @@ if (result.error) {
 
 // Updating a course
 app.put('/api/courses/:id', (req, res) => {
+    // Checking for course availability
     const course = courses.find (c => c.id === parseInt(req.params.id));
+    if (!course) res.status(404).send('The course with the given ID was not found');
+
+    // Validating the course
+    const schema = {
+        name: Joi.string().min(4).required()
+    };
+    const result = Joi.validate(req.body, schema);
+
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
 
 })
 
