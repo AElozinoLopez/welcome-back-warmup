@@ -1,6 +1,7 @@
 const express = require('express');
 const {router} = require ('./routes');
 const Joi = require('joi');
+app.set('view engine', 'pug')
 
 const app = express();
 
