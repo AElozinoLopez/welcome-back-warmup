@@ -1,2 +1,2 @@
-console.log("before");
+console.log("Before");
 console.log("After");
