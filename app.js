@@ -123,6 +123,11 @@ app.delete('/api/courses/:id', (req, res) => {
     res.send(course);
 })
 
+// Route for pug
+app.get('/api', (req, res) => {
+    res.render('index', {title: 'My pug', message: 'Yo!'});
+})
+
 app.listen (port, () => {
     console.log(`Welcome back app is listening on port ${port}`)
 })
