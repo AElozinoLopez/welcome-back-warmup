@@ -1,5 +1,5 @@
 console.log("Before");
-
+getUser(1);
 console.log("After");
 
 function getUser(id) {
