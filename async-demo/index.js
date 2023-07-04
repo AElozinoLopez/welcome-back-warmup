@@ -14,10 +14,10 @@ getUser(1, function(user){
     console.log('User..', user)
     getRepositories (user.gitHubUserName, (repos) => {
         console.log('Repos..', repos);
-    getCommits (repo.getCommits, (commit) => {
-        console.log('Commits..', commit);
-    })
-    })
+    getCommits (repos, (commits) => {
+        console.log('Commits..', commits);
+    });
+    });
 });
 
 console.log("After");
@@ -39,7 +39,7 @@ function getRepositories(user, callback) {
 
 function getCommits (repo, callback) {
     setTimeout (()=> {
-        console.log('Getting user commits..', repo);
+        console.log('Getting user commits..');
         callback(['commit']);
     }, 2000)
 }
