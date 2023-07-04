@@ -35,5 +35,8 @@ function getRepositories(user, callback) {
 }
 
 function getCommits (repo, callback) {
-
+    setTimeout (()=> {
+        console.log('Getting user commits..', repo);
+        callback(['commit']);
+    }, 2000)
 }
