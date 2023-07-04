@@ -33,3 +33,7 @@ function getRepositories(user, callback) {
     }, 2000)
     
 }
+
+funtion getCommits (repo, callback) {
+
+}
