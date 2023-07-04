@@ -22,3 +22,7 @@ function getUser(id, callback) {
         callback({id: id, gitHubUserName: "babySplendour"});
     }, 2000);
 }
+
+function getRepositories() {
+    return ["Repo1", "Repo2", "Repo3"]
+}
