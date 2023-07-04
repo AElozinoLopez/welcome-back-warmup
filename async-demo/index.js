@@ -11,7 +11,7 @@
 // Using A Callback to access an object in an asynchronous code
 console.log("Before");
 getUser(1, function(user){
-    console.log(user)
+    console.log('User..', user)
 });
 
 console.log("After");
@@ -23,6 +23,10 @@ function getUser(id, callback) {
     }, 2000);
 }
 
-function getRepositories() {
-    return ["Repo1", "Repo2", "Repo3"]
+function getRepositories(callback) {
+    setTimeout () {
+        console.log("Calling GitHub API...");
+        callback (["Repo1", "Repo2", "Repo3"]);
+    }
+    
 }
