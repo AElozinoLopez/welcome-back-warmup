@@ -14,9 +14,9 @@ getUser(1, function(user){
     console.log('User..', user)
     getRepositories (user.gitHubUserName, (repos) => {
         console.log('Repos..', repos);
-    getCommits (repos, (commits) => {
-        console.log('Commits..', commits);
-    });
+        getCommits (repos, (commits) => {
+            console.log('Commits..', commits);
+        });
     });
 });
 
