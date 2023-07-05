@@ -44,7 +44,7 @@
 //     }, 2000)
 // }  
 
-// Using  name function to simplify the callback hell
+// Using  Name function to simplify the callback hell
 console.log("Before");
 getUser(1, function(user){
     console.log('User..', user)
@@ -79,3 +79,9 @@ function getCommits (repo, callback) {
         callback(['commit']);
     }, 2000)
 }
+
+// Introducing the name function
+function getCommits (commits) {
+    console.log(commits);
+}
+
