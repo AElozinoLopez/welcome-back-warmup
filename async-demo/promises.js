@@ -24,3 +24,5 @@ function getUsers () {
         }, 5000)
     })
 }
+
+Promise.then(onFulfilled, onRejected);
