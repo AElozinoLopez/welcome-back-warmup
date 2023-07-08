@@ -48,11 +48,11 @@
 console.log("Before");
 getUser(1, function(user){
     console.log('User..', user)
-        getRepositories (repos, getRepositories);
-        getCommits (repos, getCommits);
+        getRepositories (user, getRepositories);
+        getCommits (repo, getCommits);
     });
-});
 
+    
 console.log("After");
 
 function getUser(id, callback) {
