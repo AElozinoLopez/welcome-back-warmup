@@ -25,8 +25,12 @@ function getUsers () {
     })
 }
 
-Promise.then(onFulfilled, onRejected);
+// Promise.then(onFulfilled, onRejected);
 
 function onFulfilled(user) {
     console.log(users);
 }
+
+const promise = getUsers();
+
+promise.then(onFulfilled);
