@@ -26,3 +26,7 @@ function getUsers () {
 }
 
 Promise.then(onFulfilled, onRejected);
+
+function onFulfilled(user) {
+    console.log(users);
+}
