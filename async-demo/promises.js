@@ -37,6 +37,10 @@ function onFulfilled(users) {
     console.log(users);
 }
 
+function onRejected (error){
+    console.log(error.message);
+}
+
 const promise = getUsers();
 
 promise.then(onFulfilled);
