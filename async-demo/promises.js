@@ -18,7 +18,7 @@ function getUsers () {
     return new Promise((resolve, reject) =>{
         setTimeout(function(){
             const result = true;
-            if(success) {
+            if(result) {
                 resolve([
                     {username: 'AElozino', email: 'aelozino@gmail.com'},
                     {username: 'Peace', email: "peace.o@gmail.com"}
