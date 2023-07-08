@@ -83,3 +83,7 @@ function getCommits (commits) {
     console.log(commits);
 }
 
+function getRepositories (repos) {
+    console.log(repos);
+}
+
