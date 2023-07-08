@@ -1,3 +1,5 @@
-const promise = new Promise (function(resolve, reject) {
+const promise = new Promise ((resolve, reject) => {
 
-})
+});
+
+console.log(promise);
