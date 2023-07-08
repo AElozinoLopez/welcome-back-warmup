@@ -17,10 +17,16 @@
 function getUsers () {
     return new Promise((resolve, reject) =>{
         setTimeout(function(){
-            resolve([
-                {username: 'AElozino', email: 'aelozino@gmail.com'},
-                {username: 'Peace', email: "peace.o@gmail.com"}
-            ])
+            const result = true;
+            if(success) {
+                resolve([
+                    {username: 'AElozino', email: 'aelozino@gmail.com'},
+                    {username: 'Peace', email: "peace.o@gmail.com"}
+                ])
+            } else {
+                reject(new Error('Something went wrong'));
+            }
+            
         }, 5000)
     })
 }
