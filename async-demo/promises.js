@@ -20,7 +20,7 @@ function getUsers () {
             resolve([
                 {username: 'AElozino', email: 'aelozino@gmail.com'},
                 {username: 'Peace', email: "peace.o@gmail.com"}
-            ])
+            ], 5000)
         })
     })
 }
