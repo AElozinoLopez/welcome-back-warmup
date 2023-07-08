@@ -13,3 +13,14 @@
 // promise.then(result => console.log(result))
 //        .catch(err => console.log('Error', err.message));
 // // console.log(promise);
+
+function getUsers () {
+    return new Promise((resolve, reject) =>{
+        setTimeout(function(){
+            resolve([
+                {username: 'AElozino', email: 'aelozino@gmail.com'},
+                {username: 'Peace', email: "peace.o@gmail.com"}
+            ])
+        })
+    })
+}
