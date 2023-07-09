@@ -14,36 +14,36 @@
 //        .catch(err => console.log('Error', err.message));
 // // console.log(promise);
 
-function getUsers () {
-    return new Promise((resolve, reject) =>{
-        setTimeout(function(){
-            const result = true;
-            if(result) {
-                resolve([
-                    {username: 'AElozino', email: 'aelozino@gmail.com'},
-                    {username: 'Peace', email: "peace.o@gmail.com"}
-                ])
-            } else {
-                reject(new Error('Something went wrong'));
-            }
+// function getUsers () {
+//     return new Promise((resolve, reject) =>{
+//         setTimeout(function(){
+//             const result = true;
+//             if(result) {
+//                 resolve([
+//                     {username: 'AElozino', email: 'aelozino@gmail.com'},
+//                     {username: 'Peace', email: "peace.o@gmail.com"}
+//                 ])
+//             } else {
+//                 reject(new Error('Something went wrong'));
+//             }
             
-        }, 5000)
-    })
-}
+//         }, 5000)
+//     })
+// }
 
-// Promise.then(onFulfilled, onRejected);
+// // Promise.then(onFulfilled, onRejected);
 
-function onFulfilled(users) {
-    console.log(users);
-}
+// function onFulfilled(users) {
+//     console.log(users);
+// }
 
-function onRejected (error){
-    console.log(error.message);
-}
+// function onRejected (error){
+//     console.log(error.message);
+// }
 
-const promise = getUsers();
+// const promise = getUsers();
 
-promise.then(onFulfilled, onRejected); 
+// promise.then(onFulfilled, onRejected); 
 
 
 // Using  Promise to replace the callbacks 
@@ -60,14 +60,14 @@ getUser(1, function(user){
     
 console.log("After");
 
-function getUser(id, callback) {
+function getUser(id) {
     return new Promise ((resolve, reject) => {
-    
+        setTimeout(() => {
+            console.log('Thank you for visiting techSpire!');
+            resolve({id: id, gitHubUserName: "babySplendour"});
+        }, 2000);
     })
-    setTimeout(() => {
-        console.log('Thank you for visiting techSpire!');
-        callback({id: id, gitHubUserName: "babySplendour"});
-    }, 2000);
+    
 }
 
 function getRepositories(user, callback) {
