@@ -71,11 +71,11 @@ function getUser(id) {
     
 }
 
-function getRepositories(user, callback) {
+function getRepositories(user) {
     return new Promise ((resolve, reject) => {
         setTimeout (() => {
             console.log("Calling GitHub API...");
-            callback (["Repo1", "Repo2", "Repo3"]);
+            resolve (["Repo1", "Repo2", "Repo3"]);
         }, 2000)  
     })
      
