@@ -47,9 +47,12 @@
 // Using  Name function to simplify the callback hell
 console.log("Before");
 getUser(1, function(user){
-    console.log('User..', user)
-        getRepositories (user, getRepositories);
-        getCommits (repo, getCommits);
+    // console.log('User..', user)
+        getRepositories (user.gitHubUserName, (repos) => { 
+            getCommits (repos[0], (commits) => {
+                console.log(commits);
+            })
+        })   
     });
 
     
