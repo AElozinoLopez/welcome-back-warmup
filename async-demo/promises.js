@@ -61,6 +61,9 @@ getUser(1, function(user){
 console.log("After");
 
 function getUser(id, callback) {
+    new Promise (resolve, reject) {
+        
+    }
     setTimeout(() => {
         console.log('Thank you for visiting techSpire!');
         callback({id: id, gitHubUserName: "babySplendour"});
