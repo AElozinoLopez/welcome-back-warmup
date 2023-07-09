@@ -14,6 +14,7 @@
 //        .catch(err => console.log('Error', err.message));
 // // console.log(promise);
 
+
 // function getUsers () {
 //     return new Promise((resolve, reject) =>{
 //         setTimeout(function(){
@@ -71,11 +72,13 @@ function getUser(id) {
 }
 
 function getRepositories(user, callback) {
+    return new Promise ((resolve, reject) => {
+
+    })
     setTimeout (() => {
         console.log("Calling GitHub API...");
         callback (["Repo1", "Repo2", "Repo3"]);
-    }, 2000)
-    
+    }, 2000)   
 }
 
 function getCommits (repo, callback) {
