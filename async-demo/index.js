@@ -91,5 +91,8 @@
 
 
 console.log('Speaker 1 - ASAIJE Elozino Lopez');
-console.log('Speaker 3 - USUEKE Christian');
+setTimeout(()=> {
+    console.log('Speaker 3 - USUEKE Christian');
+}, 3000)
+
 console.log('Speaker 2 - ODOH Peace');
