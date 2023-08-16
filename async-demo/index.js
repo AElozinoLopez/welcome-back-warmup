@@ -92,7 +92,7 @@
 
 console.log('Speaker 1 - ASAIJE Elozino Lopez');
 setTimeout(()=> {
-    console.log('Fetching advert from the database...');
+    console.log('Fetching advert 1 from the database...');
 }, 2000)
 
 console.log('Speaker 2 - ODOH Peace');
