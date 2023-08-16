@@ -44,48 +44,51 @@
 //     }, 2000)
 // }  
 
-// Using  Name function to simplify the callback hell
-console.log("Before");
-getUser(1, function(user){
-    // console.log('User..', user)
-        getRepositories (user.gitHubUserName, (repos) => { 
-            getCommits (repos[0], (commits) => {
-                console.log(commits);
-            })
-        })   
-    });
+// // Using  Name function to simplify the callback hell
+// console.log("Before");
+// getUser(1, function(user){
+//     // console.log('User..', user)
+//         getRepositories (user.gitHubUserName, (repos) => { 
+//             getCommits (repos[0], (commits) => {
+//                 console.log(commits);
+//             })
+//         })   
+//     });
 
     
-console.log("After");
+// console.log("After");
 
-function getUser(id, callback) {
-    setTimeout(() => {
-        console.log('Thank you for visiting techSpire!');
-        callback({id: id, gitHubUserName: "babySplendour"});
-    }, 2000);
-}
+// function getUser(id, callback) {
+//     setTimeout(() => {
+//         console.log('Thank you for visiting techSpire!');
+//         callback({id: id, gitHubUserName: "babySplendour"});
+//     }, 2000);
+// }
 
-function getRepositories(user, callback) {
-    setTimeout (() => {
-        console.log("Calling GitHub API...");
-        callback (["Repo1", "Repo2", "Repo3"]);
-    }, 2000)
+// function getRepositories(user, callback) {
+//     setTimeout (() => {
+//         console.log("Calling GitHub API...");
+//         callback (["Repo1", "Repo2", "Repo3"]);
+//     }, 2000)
     
-}
+// }
 
-function getCommits (repo, callback) {
-    setTimeout (()=> {
-        console.log('Getting user commits..');
-        callback(['commit']);
-    }, 2000)
-}
+// function getCommits (repo, callback) {
+//     setTimeout (()=> {
+//         console.log('Getting user commits..');
+//         callback(['commit']);
+//     }, 2000)
+// }
 
-// Introducing the name function
-function getCommits (commits) {
-    console.log(commits);
-}
+// // Introducing the name function
+// function getCommits (commits) {
+//     console.log(commits);
+// }
 
-function getRepositories (repos) {
-    console.log(repos);
-}
+// function getRepositories (repos) {
+//     console.log(repos);
+// }
 
+
+console.log('Speaker 1');
+console.log('Speaker 2');
