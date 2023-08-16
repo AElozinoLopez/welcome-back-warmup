@@ -90,5 +90,5 @@
 // }
 
 
-console.log('Speaker 1');
-console.log('Speaker 2');
+console.log('Speaker 1 - ASAIJE Elozino Lopez');
+console.log('Speaker 2 - ODOH Peace');
