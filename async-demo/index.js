@@ -91,6 +91,9 @@
 
 
 console.log('Speaker 1 - ASAIJE Elozino Lopez');
+function getAdvert() {
+    
+}
 setTimeout(()=> {
     console.log('Fetching advert 1 from the database...');
 }, 2000)
