@@ -91,4 +91,5 @@
 
 
 console.log('Speaker 1 - ASAIJE Elozino Lopez');
+console.log('Speaker 3 - USUEKE Christian');
 console.log('Speaker 2 - ODOH Peace');
